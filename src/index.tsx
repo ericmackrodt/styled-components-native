@@ -1,5 +1,6 @@
 import transform from "css-to-react-native-transform";
 import React from "react";
+import styled from "styled-components/native";
 
 function getCssString(literals: TemplateStringsArray, placeholders: string[]) {
   return literals.reduce((acc, next, index) => {
@@ -15,15 +16,14 @@ function getCssString(literals: TemplateStringsArray, placeholders: string[]) {
   }, "");
 }
 
-function styledNative<TProps>(WrappedComponent: React.ComponentType<TProps>) {
-  return (
-    literals: TemplateStringsArray,
-    ...placeholders: string[]
-  ): React.SFC<TProps> => {
+function styledNative<TProps, C extends React.ComponentType<TProps>>(
+  WrappedComponent: C
+) {
+  return (literals: TemplateStringsArray, ...placeholders: string[]) => {
     const css = getCssString(literals, placeholders);
-    const result: Partial<TProps> = transform(css);
+    const result: TProps = transform(css);
 
-    return (props: TProps) => <WrappedComponent {...result} {...props} />;
+    return styled(WrappedComponent).attrs({ ...result })``;
   };
 }
 
