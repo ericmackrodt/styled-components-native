@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "jsx": "react-native",
+    "rootDir": "src",
+    "outDir": "build",
+    "sourceMap": true,
+    "preserveConstEnums": true,
+    "noImplicitReturns": true,
+    "skipLibCheck": true,
+    "target": "es2015",
+    "module": "es2015",
+    "lib": ["es2017", "es2015"],
+    "allowJs": false,
+    "strict": true,
+    "declaration": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
+    "resolveJsonModule": true
+  },
+  "filesGlob": [
+    "typings/**/*.d.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+  ],
+  "exclude": ["build", "node_modules", "jest.config.js", "App.js"],
+  "compileOnSave": false
+}
