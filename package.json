@@ -1,6 +1,6 @@
 {
   "name": "styled-components-native",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Adds better react-native support to styled components",
   "scripts": {
     "build": "tsc",
